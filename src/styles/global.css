@@ -85,6 +85,23 @@ body {
 .locale-links a:hover { color: var(--text); }
 .locale-links .sep { color: var(--border); font-size: 12px; }
 
+.nav-links {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-right: 16px;
+}
+.nav-links a {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+.nav-links a:hover { color: var(--text); }
+
 .social-links {
   display: flex;
   gap: 12px;
