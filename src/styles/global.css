@@ -1,22 +1,14 @@
-/*
- * AI Alignment Blog — Clean, readable typography
- * Inspired by blog.samaltman.com, augmented for modern reading
- */
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@400;500;600&display=swap');
 
 :root {
   --bg: #fcfcfc;
-  --bg-card: #ffffff;
   --text: #1a1a1a;
   --text-secondary: #6b6b6b;
   --border: #e8e8e8;
-  --accent: #1a1a1a;
-  --accent-hover: #444;
   --serif: 'PT Serif', Georgia, 'Times New Roman', serif;
   --sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --mono: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
   --measure: 660px;
-  --radius: 6px;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -32,38 +24,65 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-::selection {
-  background: #d4d4d4;
-  color: var(--text);
+::selection { background: #d4d4d4; color: var(--text); }
+
+.wrap { max-width: var(--measure); margin: 0 auto; padding: 0 24px; }
+
+/* === HEADER: name + socials === */
+.site-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 48px 0 40px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 48px;
 }
 
-/* Container */
-.wrap {
-  max-width: var(--measure);
-  margin: 0 auto;
-  padding: 0 24px;
+.site-name {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
-/* === HEADER === */
-header[role="banner"] {
-  padding: 48px 0 56px;
-}
-header[role="banner"] a {
+.blog-title {
   font-family: var(--sans);
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: var(--text);
+  text-decoration: none;
+}
+.blog-title:hover { color: #555; }
+
+.byline {
+  font-family: var(--serif);
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-style: italic;
+}
+
+.social-links {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.social-links a {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--text-secondary);
   text-decoration: none;
 }
-header[role="banner"] a:hover { color: var(--text); }
+.social-links a:hover { color: var(--text); }
 
-/* === HOME PAGE : ARTICLE LIST === */
+/* === HOME PAGE === */
 .articles { margin-bottom: 64px; }
 
 .articles article {
-  margin-bottom: 32px;
+  margin-bottom: 36px;
 }
 
 .articles article time {
@@ -73,7 +92,7 @@ header[role="banner"] a:hover { color: var(--text); }
   color: var(--text-secondary);
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  margin-bottom: 4px;
+  margin-bottom: 3px;
 }
 
 .articles article h2 {
@@ -87,7 +106,7 @@ header[role="banner"] a:hover { color: var(--text); }
   text-decoration: none;
 }
 .articles article h2 a:hover {
-  color: var(--accent-hover);
+  color: #555;
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
@@ -113,26 +132,12 @@ header[role="banner"] a:hover { color: var(--text); }
   font-size: 13px;
   color: var(--text-secondary);
 }
+.post-header .meta .category::before { content: '· '; margin-left: 4px; }
 
-.post-header .meta time { margin-right: 8px; }
+/* === PROSE === */
+.prose { font-size: 18px; line-height: 1.75; }
 
-.post-header .meta .category {
-  display: inline-block;
-  font-weight: 500;
-  color: var(--text-secondary);
-}
-.post-header .meta .category::before { content: '· '; }
-
-/* === PROSE CONTENT === */
-.prose {
-  font-size: 18px;
-  line-height: 1.75;
-  color: var(--text);
-}
-
-.prose p {
-  margin-bottom: 1.35em;
-}
+.prose p { margin-bottom: 1.35em; }
 
 .prose h2 {
   font-family: var(--sans);
@@ -149,16 +154,9 @@ header[role="banner"] a:hover { color: var(--text); }
   margin: 1.8em 0 0.5em;
 }
 
-.prose ul,
-.prose ol {
-  margin-bottom: 1.35em;
-  padding-left: 1.5em;
-}
-
+.prose ul, .prose ol { margin-bottom: 1.35em; padding-left: 1.5em; }
 .prose li { margin-bottom: 0.3em; }
-
 .prose strong { font-weight: 700; }
-
 .prose em { font-style: italic; }
 
 .prose blockquote {
@@ -168,7 +166,6 @@ header[role="banner"] a:hover { color: var(--text); }
   color: #555;
   font-style: italic;
 }
-
 .prose blockquote strong { font-style: normal; }
 
 .prose a {
@@ -179,9 +176,7 @@ header[role="banner"] a:hover { color: var(--text); }
   text-decoration-color: #bbb;
   transition: text-decoration-color 0.15s;
 }
-.prose a:hover {
-  text-decoration-color: var(--text);
-}
+.prose a:hover { text-decoration-color: var(--text); }
 
 .prose code {
   font-family: var(--mono);
@@ -198,7 +193,7 @@ header[role="banner"] a:hover { color: var(--text); }
   padding: 16px 20px;
   overflow-x: auto;
   margin: 1.5em 0;
-  border-radius: var(--radius);
+  border-radius: 6px;
   line-height: 1.5;
 }
 
@@ -209,35 +204,14 @@ header[role="banner"] a:hover { color: var(--text); }
 }
 
 .prose sup { font-size: 0.75em; }
-.prose sup a {
-  text-decoration: none;
-  color: var(--text-secondary);
-}
+.prose sup a { text-decoration: none; color: var(--text-secondary); }
 .prose sup a:hover { color: var(--text); }
 
-.prose .footnotes {
-  margin-top: 3em;
-  padding-top: 1.5em;
-  border-top: 1px solid var(--border);
-  font-size: 0.85em;
-  color: var(--text-secondary);
-}
-.prose .footnotes a { color: var(--text-secondary); }
-
 /* === ABOUT === */
-.about {
-  padding-bottom: 64px;
-}
-.about h1 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 24px;
-}
-.about p {
-  margin-bottom: 1.2em;
-  font-size: 17px;
-  line-height: 1.7;
-}
+.about { padding-bottom: 64px; }
+.about h1 { font-size: 26px; font-weight: 700; margin-bottom: 20px; }
+.about p { margin-bottom: 1.2em; font-size: 17px; line-height: 1.7; }
+.about a { color: var(--text); text-decoration: underline; }
 
 /* === FOOTER === */
 footer[role="contentinfo"] {
@@ -259,7 +233,7 @@ footer[role="contentinfo"] a:hover { color: var(--text); }
   position: absolute;
   top: -100px;
   left: 0;
-  background: var(--accent);
+  background: #1a1a1a;
   color: white;
   padding: 8px 16px;
   font-family: var(--sans);
@@ -271,8 +245,8 @@ footer[role="contentinfo"] a:hover { color: var(--text); }
 /* === RESPONSIVE === */
 @media (max-width: 640px) {
   html { font-size: 16px; }
-  header[role="banner"] { padding: 32px 0 40px; }
   .wrap { padding: 0 20px; }
+  .site-head { flex-direction: column; align-items: flex-start; gap: 12px; padding: 24px 0 24px; margin-bottom: 32px; }
   .post-header h1 { font-size: 24px; }
   .prose { font-size: 17px; }
   .articles article h2 { font-size: 18px; }
