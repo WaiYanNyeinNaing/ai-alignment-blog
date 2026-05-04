@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 export interface Props {
   title: string;
   description?: string;
@@ -17,25 +19,24 @@ const site = "https://ai-alignment-blog.vercel.app";
     <link rel="canonical" href={new URL(Astro.url.pathname, site).href} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title} | AI Alignment Blog</title>
-    <link rel="stylesheet" href="/src/styles/global.css" />
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to content</a>
 
-    <div class="container">
-      <header class="site-title">
+    <header role="banner">
+      <div class="wrap">
         <a href="/">AI Alignment Blog</a>
-      </header>
-    </div>
+      </div>
+    </header>
 
-    <main id="main-content" class="container">
+    <main id="main-content" class="wrap">
       <slot />
     </main>
 
-    <div class="container">
-      <footer class="site-footer">
-        <a href="/">Home</a> · <a href="/about">About</a> · <a href="/rss.xml">RSS</a>
-      </footer>
-    </div>
+    <footer role="contentinfo">
+      <div class="wrap">
+        <a href="/">Home</a> &middot; <a href="/about">About</a> &middot; <a href="/rss.xml">RSS</a>
+      </div>
+    </footer>
   </body>
 </html>
