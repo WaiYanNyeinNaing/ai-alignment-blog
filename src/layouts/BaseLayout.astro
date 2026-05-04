@@ -1,0 +1,51 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+}
+
+const { title, description, canonical } = Astro.props;
+const site = "https://ai-alignment-blog.vercel.app";
+const canonicalURL = canonical || new URL(Astro.url.pathname, site).href;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description || "AI safety and alignment — explained clearly, backed by research."} />
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} | AI Alignment Blog</title>
+    <link rel="stylesheet" href="/src/styles/global.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <nav aria-label="Site navigation">
+      <div class="container">
+        <a href="/" class="logo">AI Alignment Blog</a>
+        <div class="nav-links">
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+        </div>
+      </div>
+    </nav>
+
+    <main id="main-content" class="container">
+      <slot />
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>AI Alignment Blog — explaining AI safety, alignment, and responsible AI development.</p>
+        <p style="margin-top: 0.5rem;"><a href="/rss.xml">RSS Feed</a></p>
+      </div>
+    </footer>
+  </body>
+</html>
