@@ -4,6 +4,7 @@ description: "A beginner-friendly introduction to AI alignment — outer alignme
 date: 2026-05-04
 category: "Basics"
 tags: ["alignment", "101", "beginners", "outer alignment", "inner alignment"]
+locale: "en"
 draft: false
 ---
 

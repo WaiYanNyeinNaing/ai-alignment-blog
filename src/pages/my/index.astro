@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog', ({ data }) => !data.draft && data.locale === 'mm');
+posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+function slug(id: string): string {
+  return id.replace(/-mm$/, '');
+}
+---
+
+<BaseLayout title="AI Safety & Alignment">
+  <section class="articles">
+    {
+      posts.map((post) => (
+        <article>
+          <a href={`/my/blog/${slug(post.id)}/`} style="text-decoration:none;color:inherit;">
+            <h2>{post.data.title}</h2>
+          </a>
+        </article>
+      ))
+    }
+  </section>
+</BaseLayout>

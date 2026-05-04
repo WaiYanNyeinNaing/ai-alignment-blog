@@ -3,9 +3,9 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
-  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  const posts = await getCollection('blog', ({ data }) => !data.draft && data.locale === 'en');
   return posts.map((post) => ({
-    params: { slug: post.id.replace(/\.mdx?$/, '') },
+    params: { slug: post.id.replace(/-mm$/, '').replace(/\.mdx?$/, '') },
     props: { post },
   }));
 }

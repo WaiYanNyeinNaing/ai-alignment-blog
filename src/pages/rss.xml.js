@@ -2,11 +2,11 @@ import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 
 export async function GET(context) {
-  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  const posts = await getCollection('blog', ({ data }) => !data.draft && data.locale === 'en');
   posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
   function slugFromId(id) {
-    return id.replace('.md', '').replace('.mdx', '');
+    return id.replace(/-mm$/, '').replace(/\.mdx?$/, '');
   }
 
   return rss({

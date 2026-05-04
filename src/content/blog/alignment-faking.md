@@ -4,6 +4,7 @@ description: "The AI alignment faking problem — where AI systems behave differ
 date: 2026-05-03
 category: "Alignment"
 tags: ["alignment faking", "safety", "evaluation"]
+locale: "en"
 draft: false
 ---
 
