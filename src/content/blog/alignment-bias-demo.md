@@ -18,7 +18,7 @@ I built a live demo to prove it. Try it yourself below.
 
 ## The Live Demo
 
-[**Open the Alignment Bias Demo in a new tab**](https://theo-wai-prototype.vercel.app/demo/bias-demo.html)
+[**Open the Alignment Bias Demo in a new tab**](https://theo-wai-prototype-uszy.vercel.app/demo/bias-demo)
 
 The setup is simple:
 
@@ -104,7 +104,7 @@ The Stanford HAI 2026 AI Index Report [\[2\]](https://hai.stanford.edu/ai-index/
 
 ## Try It Yourself
 
-[**Open the Alignment Bias Demo**](https://theo-wai-prototype.vercel.app/demo/bias-demo.html)
+[**Open the Alignment Bias Demo**](https://theo-wai-prototype-uszy.vercel.app/demo/bias-demo)
 
 Type your own questions. Swap the system prompts. See how the same model responds differently. The demo runs on Gemini 2.5 Flash and takes about 5-10 seconds per comparison.
 

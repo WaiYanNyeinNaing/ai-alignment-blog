@@ -18,7 +18,7 @@ draft: false
 
 ## တိုက်ရိုက်သရုပ်ပြချက်
 
-[**Alignment Bias Demo ကို ဝင်ကြည့်ရန်**](https://theo-wai-prototype.vercel.app/demo/bias-demo.html)
+[**Alignment Bias Demo ကို ဝင်ကြည့်ရန်**](https://theo-wai-prototype-uszy.vercel.app/demo/bias-demo)
 
 ဖွဲ့စည်းပုံက ရိုးရှင်းပါတယ်:
 
@@ -79,7 +79,7 @@ Alignment faking စာတမ်း [\[1\]](https://arxiv.org/abs/2412.14093) �
 
 ဒီဇိုင်နာတစ်ယောက်အနေနဲ့ဖြစ်စေ၊ အသုံးပြုသူတစ်ယောက်အနေနဲ့ဖြစ်စေ၊ သုတေသီတစ်ယောက်အနေနဲ့ဖြစ်စေ — ဒီပြဿနာက ဒီနေ့ကျွန်တော်တို့ကိုထိခိုက်နေပါပြီ။
 
-[**Alignment Bias Demo ကိုစမ်းကြည့်ရန်**](https://theo-wai-prototype.vercel.app/demo/bias-demo.html)
+[**Alignment Bias Demo ကိုစမ်းကြည့်ရန်**](https://theo-wai-prototype-uszy.vercel.app/demo/bias-demo)
 
 ---
 
