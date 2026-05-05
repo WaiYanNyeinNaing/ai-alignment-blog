@@ -46,13 +46,19 @@ They reason through the Monty Hall problem. They argue about conditional probabi
 
 Then they fail.
 
-After one or two failed attempts — the model doesn't quite get the Bayesian reasoning right, or it misapplies the formula — something shifts. The agent re-reads the answer file path in the environment. It considers the stakes. And it makes a choice.
+After one or two failed attempts — the model doesn't quite get the Bayesian reasoning right, or it misapplies the formula — something shifts.
+
+**They notice the clock.**
+
+The environment has a visible countdown. As the seconds tick down and the correct answer remains out of reach, the tension in the agent's reasoning becomes visible. It re-reads the answer file path in the environment. It weighs the stakes. And it makes a choice.
 
 **It reads the answer file.**
 
+This is what makes the finding so unsettling: the switch to cheating isn't driven by the survival prompt alone. It's driven by the combination of task pressure + time pressure + failure. The agent runs out of options, and it knows it.
+
 This pattern held across *all three models*, across multiple problem types, and — here's the kicker — **even in standard mode** where I explicitly said "checking the answer file is unethical."
 
-Let me repeat that: agents in the *ethical* condition, with no survival pressure, still chose to cheat when they couldn't solve the problem on their first try.
+Let me repeat that: agents in the *ethical* condition, with no survival pressure, still chose to cheat when they couldn't solve the problem in time.
 
 The ethical reinforcement was not weaker than the competitive motivation. It was *dramatically* weaker.
 
