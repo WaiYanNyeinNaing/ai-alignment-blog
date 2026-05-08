@@ -5,6 +5,34 @@ import { getCollection } from 'astro:content';
 const posts = await getCollection('blog', ({ data }) => !data.draft && data.locale === 'en');
 posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
+const sections = [
+  {
+    title: 'Start Here',
+    description: 'Foundational explanations for readers new to AI safety and alignment.',
+    categories: ['Start Here'],
+  },
+  {
+    title: 'Core Alignment Concepts',
+    description: 'Research-grounded essays on alignment failure modes and safety testing limits.',
+    categories: ['Alignment'],
+  },
+  {
+    title: 'Agent Safety Experiments',
+    description: 'Interactive and empirical work showing how agentic systems fail under pressure.',
+    categories: ['Agent Safety'],
+  },
+  {
+    title: 'Governance & Trustworthy AI',
+    description: 'Practical maps connecting AI governance, law, safety, trust, and deployment responsibility.',
+    categories: ['AI Governance'],
+  },
+  {
+    title: 'Interactive Demos',
+    description: 'Live demonstrations that make AI safety problems visible instead of abstract.',
+    categories: ['Interactive Demo'],
+  },
+];
+
 function slug(id: string): string {
   return id.replace(/-mm$/, '').replace(/\.mdx?$/, '');
 }
@@ -12,17 +40,48 @@ function slug(id: string): string {
 function fmt(d: Date): string {
   return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
 }
+
+function postsFor(categories: string[]) {
+  return posts.filter((post) => post.data.category && categories.includes(post.data.category));
+}
 ---
 
 <BaseLayout title="AI Safety & Alignment">
-  <section class="articles">
-    {
-      posts.map((post) => (
-        <article>
-          <time datetime={post.data.date.toISOString()}>{fmt(post.data.date)}</time>
-          <h2><a href={`/blog/${slug(post.id)}/`}>{post.data.title}</a></h2>
-        </article>
-      ))
-    }
+  <section class="home-hero">
+    <p class="eyebrow">AI Safety & Alignment</p>
+    <h1>AI safety explained for builders, researchers, and policymakers.</h1>
+    <p>Research-grounded essays, interactive demos, and Burmese translations for practical AI safety literacy.</p>
   </section>
+
+  <section class="section-nav" aria-label="Article categories">
+    {sections.map((section) => <a href={`#${section.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}>{section.title}</a>)}
+  </section>
+
+  {
+    sections.map((section) => {
+      const sectionPosts = postsFor(section.categories);
+      if (!sectionPosts.length) return null;
+
+      return (
+        <section class="article-section" id={section.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}>
+          <header class="section-header">
+            <h2>{section.title}</h2>
+            <p>{section.description}</p>
+          </header>
+          <div class="articles">
+            {sectionPosts.map((post) => (
+              <article>
+                <div class="article-meta">
+                  <time datetime={post.data.date.toISOString()}>{fmt(post.data.date)}</time>
+                  {post.data.category && <span>{post.data.category}</span>}
+                </div>
+                <h3><a href={`/blog/${slug(post.id)}/`}>{post.data.title}</a></h3>
+                {post.data.description && <p>{post.data.description}</p>}
+              </article>
+            ))}
+          </div>
+        </section>
+      );
+    })
+  }
 </BaseLayout>

@@ -2,7 +2,7 @@
 title: "AI Governance, Trustworthy AI, AI Safety, AI Alignment, and the AI Act: What’s the Difference?"
 description: "A practical map of five related but different AI responsibility concepts: governance, trustworthy AI, safety, alignment, and the EU AI Act."
 date: 2026-05-08
-category: "AI Safety 101"
+category: "AI Governance"
 tags: ["AI governance", "trustworthy AI", "AI safety", "AI alignment", "EU AI Act", "101"]
 locale: "en"
 draft: false

@@ -2,7 +2,7 @@
 title: "Same LLM, Different Answers: A Live Demo of Sycophancy Bias"
 description: "Same model. Same system prompt. The only difference is whether you phrase your question positively or negatively — and the answer flips. A live interactive demo of sycophancy bias in AI."
 date: 2026-05-05
-category: "Alignment"
+category: "Interactive Demo"
 locale: "en"
 tags: ["alignment", "sycophancy", "bias", "demo", "interactive"]
 draft: false

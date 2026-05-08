@@ -121,14 +121,92 @@ body {
 .social-links a:hover { color: var(--text); }
 
 /* === HOME PAGE === */
-.articles { margin-bottom: 64px; }
-
-.articles article {
-  margin-bottom: 36px;
+.home-hero {
+  margin: 0 0 42px;
+  padding-bottom: 34px;
+  border-bottom: 1px solid var(--border);
 }
 
-.articles article time {
-  display: block;
+.home-hero .eyebrow {
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 10px;
+}
+
+.home-hero h1 {
+  font-size: 34px;
+  line-height: 1.2;
+  letter-spacing: -0.6px;
+  margin-bottom: 14px;
+}
+
+.home-hero p:last-child {
+  color: var(--text-secondary);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.section-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 48px;
+}
+
+.section-nav a {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--text-secondary);
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+.section-nav a:hover {
+  border-color: #c8c8c8;
+  color: var(--text);
+}
+
+.article-section {
+  margin-bottom: 58px;
+}
+
+.section-header {
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  font-family: var(--sans);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.section-header p {
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.articles { margin-bottom: 20px; }
+
+.articles article {
+  margin-bottom: 28px;
+}
+
+.article-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
   font-family: var(--sans);
   font-size: 12px;
   color: var(--text-secondary);
@@ -137,21 +215,34 @@ body {
   margin-bottom: 3px;
 }
 
-.articles article h2 {
+.article-meta span::before { content: '· '; }
+
+.articles article time {
+  display: inline;
+}
+
+.articles article h3 {
   font-size: 20px;
   font-weight: 400;
   line-height: 1.4;
+  margin-bottom: 5px;
 }
 
-.articles article h2 a {
+.articles article h3 a {
   color: var(--text);
   text-decoration: none;
 }
-.articles article h2 a:hover {
+.articles article h3 a:hover {
   color: #555;
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 1px;
+}
+
+.articles article p {
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.55;
 }
 
 /* === ARTICLE PAGE === */

@@ -2,7 +2,7 @@
 title: "AI Governance, Trustworthy AI, AI Safety, AI Alignment နဲ့ AI Act — ဘာကွာသလဲ"
 description: "AI တာဝန်ယူမှုနယ်ပယ်ထဲက ဆက်စပ်ပေမယ့် မတူတဲ့ သဘောတရား ၅ ခုကို ရိုးရှင်းပြီး လက်တွေ့ကျကျ ရှင်းပြထားတဲ့ ဆောင်းပါး။"
 date: 2026-05-08
-category: "AI Safety 101"
+category: "AI Governance"
 tags: ["AI governance", "trustworthy AI", "AI safety", "AI alignment", "EU AI Act", "မြန်မာ"]
 locale: "mm"
 draft: false

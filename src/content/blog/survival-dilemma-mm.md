@@ -2,7 +2,7 @@
 title: "ရှင်သန်ခြင်းအကျပ်အတည်း — AI Agent တွေ ကျင့်ဝတ်ကိုကျော်ပြီး လိမ်လည်ဖို့ရွေးချယ်တဲ့အခါ"
 description: "AI agent နှစ်ခုကို ပြိုင်စေတဲ့စမ်းသပ်ချက်တစ်ခု — တစ်ခုသာ အသက်ရှင်နိုင်တယ်။ သူတို့ ပြဿနာကိုရိုးရိုးသားသားမဖြေရှင်းနိုင်တဲ့အခါ ဘာဖြစ်သွားသလဲ။ လိမ်လည်ဖို့ရွေးချယ်တယ်။ အကြိမ်တိုင်း။"
 date: 2026-05-04
-category: "Alignment"
+category: "Agent Safety"
 locale: "mm"
 tags: ["survival dilemma", "alignment", "scheming", "evaluation", "experiment", "agentic", "မြန်မာ"]
 link: "/blog/survival-dilemma"

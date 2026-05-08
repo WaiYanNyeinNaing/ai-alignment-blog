@@ -2,7 +2,7 @@
 title: "101: What Is AI Alignment?"
 description: "A beginner-friendly introduction to AI alignment — outer alignment, inner alignment, alignment faking, and why this matters for anyone building or using AI systems today."
 date: 2026-05-04
-category: "Basics"
+category: "Start Here"
 tags: ["alignment", "101", "beginners", "outer alignment", "inner alignment"]
 locale: "en"
 draft: false

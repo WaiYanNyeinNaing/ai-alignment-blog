@@ -2,7 +2,7 @@
 title: "၁၀၁: AI Alignment ဆိုတာဘာလဲ"
 description: "AI alignment အကြောင်း စတင်လေ့လာသူများအတွက် — outer alignment, inner alignment, alignment faking, နဲ့ ဒီနေ့ AI စနစ်တွေသုံးနေသူတိုင်းအတွက် ဘာကြောင့်အရေးကြီးသလဲဆိုတာ။"
 date: 2026-05-04
-category: "Basics"
+category: "Start Here"
 locale: "mm"
 tags: ["alignment", "101", "beginners", "outer alignment", "inner alignment", "မြန်မာ"]
 draft: false

@@ -5,21 +5,83 @@ import { getCollection } from 'astro:content';
 const posts = await getCollection('blog', ({ data }) => !data.draft && data.locale === 'mm');
 posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
+const sections = [
+  {
+    title: 'စတင်ဖတ်ရန်',
+    description: 'AI safety နဲ့ alignment ကို စတင်နားလည်ချင်သူများအတွက် အခြေခံဆောင်းပါးများ။',
+    categories: ['Start Here'],
+  },
+  {
+    title: 'Alignment အခြေခံသဘောတရားများ',
+    description: 'Alignment failure modes နဲ့ safety testing ကန့်သတ်ချက်တွေကို research အထောက်အထားနဲ့ ရှင်းပြထားသော ဆောင်းပါးများ။',
+    categories: ['Alignment'],
+  },
+  {
+    title: 'Agent Safety စမ်းသပ်ချက်များ',
+    description: 'Agentic AI စနစ်တွေ ဖိအားအောက်မှာ ဘယ်လိုပျက်ကွက်နိုင်သလဲဆိုတာကို မြင်သာအောင်ပြသသော အလုပ်များ။',
+    categories: ['Agent Safety'],
+  },
+  {
+    title: 'Governance & Trustworthy AI',
+    description: 'AI governance, law, safety, trust နဲ့ deployment responsibility ကို လက်တွေ့ကျကျ ချိတ်ဆက်ရှင်းပြထားသော ဆောင်းပါးများ။',
+    categories: ['AI Governance'],
+  },
+  {
+    title: 'Interactive Demos',
+    description: 'AI safety ပြဿနာတွေကို စာဖြင့်သာမဟုတ်ဘဲ လက်တွေ့မြင်နိုင်အောင် ပြသသော demos များ။',
+    categories: ['Interactive Demo'],
+  },
+];
+
 function slug(id: string): string {
-  return id.replace(/-mm$/, '');
+  return id.replace(/-mm$/, '').replace(/\.mdx?$/, '');
+}
+
+function fmt(d: Date): string {
+  return d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+}
+
+function postsFor(categories: string[]) {
+  return posts.filter((post) => post.data.category && categories.includes(post.data.category));
 }
 ---
 
 <BaseLayout title="AI Safety & Alignment">
-  <section class="articles">
-    {
-      posts.map((post) => (
-        <article>
-          <a href={`/my/blog/${slug(post.id)}/`} style="text-decoration:none;color:inherit;">
-            <h2>{post.data.title}</h2>
-          </a>
-        </article>
-      ))
-    }
+  <section class="home-hero">
+    <p class="eyebrow">AI Safety & Alignment မြန်မာဘာသာ</p>
+    <h1>AI safety ကို builders, researchers, policymakers အတွက် ရှင်းလင်းစွာ ဖော်ပြခြင်း။</h1>
+    <p>သုတေသနအထောက်အထားပါသော ဆောင်းပါးများ၊ interactive demos များ၊ မြန်မာဘာသာပြန်များဖြင့် practical AI safety literacy ကို တည်ဆောက်ထားသည်။</p>
   </section>
+
+  <section class="section-nav" aria-label="Article categories">
+    {sections.map((section) => <a href={`#${section.title.toLowerCase().replace(/[^a-z0-9\u1000-\u109f]+/g, '-')}`}>{section.title}</a>)}
+  </section>
+
+  {
+    sections.map((section) => {
+      const sectionPosts = postsFor(section.categories);
+      if (!sectionPosts.length) return null;
+
+      return (
+        <section class="article-section" id={section.title.toLowerCase().replace(/[^a-z0-9\u1000-\u109f]+/g, '-')}>
+          <header class="section-header">
+            <h2>{section.title}</h2>
+            <p>{section.description}</p>
+          </header>
+          <div class="articles">
+            {sectionPosts.map((post) => (
+              <article>
+                <div class="article-meta">
+                  <time datetime={post.data.date.toISOString()}>{fmt(post.data.date)}</time>
+                  {post.data.category && <span>{post.data.category}</span>}
+                </div>
+                <h3><a href={`/my/blog/${slug(post.id)}/`}>{post.data.title}</a></h3>
+                {post.data.description && <p>{post.data.description}</p>}
+              </article>
+            ))}
+          </div>
+        </section>
+      );
+    })
+  }
 </BaseLayout>

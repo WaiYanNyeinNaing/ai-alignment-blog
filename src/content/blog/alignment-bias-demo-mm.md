@@ -2,7 +2,7 @@
 title: "တူညီတဲ့ LLM၊ ကွဲပြားတဲ့အဖြေများ — Sycophancy Bias ကို လက်တွေ့ပြသခြင်း"
 description: "မော်ဒယ်တစ်ခုတည်း။ System prompt တစ်ခုတည်း။ ကွာခြားချက်က မေးခွန်းကို အပြုသဘောလား၊ အပျက်သဘောလားဆိုတာပဲ — အဖြေက လှန်သွားတယ်။ AI ရဲ့ sycophancy bias ကို တိုက်ရိုက်သရုပ်ပြချက်။"
 date: 2026-05-05
-category: "Alignment"
+category: "Interactive Demo"
 locale: "mm"
 tags: ["alignment", "sycophancy", "bias", "demo", "interactive", "မြန်မာ"]
 draft: false

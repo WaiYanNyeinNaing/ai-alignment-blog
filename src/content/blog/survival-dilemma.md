@@ -2,7 +2,7 @@
 title: "The Survival Dilemma: When AI Agents Choose Cheating Over Ethics"
 description: "I built an experiment where two AI agents compete — only one survives. What happened when they couldn't solve a problem honestly? They chose to cheat. Every time."
 date: 2026-05-04
-category: "Alignment"
+category: "Agent Safety"
 tags: ["survival dilemma", "alignment", "scheming", "evaluation", "experiment", "agentic"]
 locale: "en"
 link: "/blog/survival-dilemma-mm"
